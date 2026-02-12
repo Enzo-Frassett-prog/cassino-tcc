@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Cassino Online — Modo Demonstração</title>
+<style>
+body{background:#0e0e0e;color:#fff;font-family:Arial;text-align:center}
+header{background:#111;padding:15px;font-size:24px}
+.card{background:#1f1f1f;border-radius:10px;width:220px;margin:15px;padding:20px}
+.container{display:flex;justify-content:center;flex-wrap:wrap}
+button{padding:10px;width:100%;background:gold;border:none;font-size:16px}
+</style>
+</head>
+<body>
+
+<header>🎰 Cassino Online — Modo Demonstração</header>
+<p><strong>Uso acadêmico. Resultados controlados.</strong></p>
+<h2>Saldo: R$ <span id="saldo">20.00</span></h2>
+
+<div class="container">
+  <div class="card">
+    <h3>🐯 Tigrinho</h3>
+    <button onclick="ganhar('Tigrinho',5)">Jogar</button>
+  </div>
+  <div class="card">
+    <h3>✈️ Avião</h3>
+    <button onclick="ganhar('Avião',7)">Decolar</button>
+  </div>
+  <div class="card">
+    <h3>🎡 Roleta</h3>
+    <button onclick="ganhar('Roleta',6)">Girar</button>
+  </div>
+</div>
+
+<div id="res"></div>
+
+<script>
+let saldo = 20;
+
+function ganhar(jogo, valor){
+  saldo += valor;
+  document.getElementById("saldo").innerText = saldo.toFixed(2);
+  document.getElementById("res").innerHTML =
+    `✅ ${jogo}: ganho demonstrativo de R$ ${valor.toFixed(2)}`;
+}
+</script>
+
+</body>
+</html>
